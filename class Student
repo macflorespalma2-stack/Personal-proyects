@@ -1,0 +1,10 @@
+class Student :
+   
+    def __init__ (self, name, age, career):
+        self.name = name
+        self.age = age
+        self.career = career
+student1 = Student("rodrigo", 23, "civil Engineer")
+student2 = Student("pedro", 19, "Psychologist")
+print(f"Student 1: Name: {student1.name}, Age: {student1.age}, Career: {student1.career}")
+print(f"Student 2: Name: {student2.name}, Age: {student2.age}, Career: {student2.career}")

@@ -1,0 +1,34 @@
+class BankAccount :
+
+    def __init__(self, owner, balance=0.0):
+        self.owner = owner
+        self.balance = balance
+    @staticmethod
+
+    def validate_amount(amount):
+        return amount > 0
+
+    def deposit(self, amount):
+        if BankAccount.validate_amount(amount):  
+            self.balance += amount
+            return f"Deposit successful. New balance: {self.balance}"
+        else:
+            return "Invalid deposit amount"
+            
+yt=""
+while yt == "":
+        yt = input("enter you user: ")
+        if yt != "":
+            print("Your user is:" +  yt)
+user = BankAccount(yt)
+
+aaa = ""
+while aaa != "balance":
+    aaa = input(
+        "Enter your deposit(numbers) or type 'balance' for exit:"
+        ).lower()
+    if aaa != "balance":
+        amount = float(aaa)
+        result = user.deposit(amount)
+        print(result)
+print("Your balance is " + str(user.balance))

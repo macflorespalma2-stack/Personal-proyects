@@ -1,0 +1,7 @@
+#the list created with the repeat purchases
+repeat_purchases = ["manzana","pera","lima","pera","pera","lima","lima","pera","manzana","pera"]
+#the list transformed into a set to remove duplicates
+unique_purchases = set(repeat_purchases)
+#print the results
+print("repeat purchases:", repeat_purchases)
+print("unique purchases:", unique_purchases)

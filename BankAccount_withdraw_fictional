@@ -1,0 +1,78 @@
+class BankAccount :
+
+    def __init__(self, owner, balance=0.0):
+        self.owner = owner
+        self.balance = balance
+    @staticmethod
+
+    def validate_amount(amount):
+        return amount > 0
+
+    def deposit(self, amount):
+        if BankAccount.validate_amount(amount):  
+            self.balance += amount
+            return f"Deposit successful. New balance: {self.balance}"
+        else:
+            return "Invalid deposit amount"
+
+class CheckingAccount(BankAccount):
+    def __init__(self, owner ,balance=0.0, overdraft_limit=0):
+        super().__init__(owner)
+        self.balance = balance
+        self.overdraft_limit = overdraft_limit
+    
+    def withdraw(self, amount):
+        if amount<= (self.balance + self.overdraft_limit):
+            self.balance -= amount
+            return f"Withdrawal successful. New balance: {self.balance}"
+        else:
+            return "Insufficient funds, overdraft limit exceeded"
+
+        
+nam_user=[]
+
+while nam_user ==[]:
+    nam_user = input(
+        "Enter your user for checking account[NAME,OPENING BALANCE, OVERDRAFT_LIMIT]:"
+        ).split(",")
+    if nam_user != []:
+        print(f"your name is {nam_user[0]}")
+
+user_chck = CheckingAccount(
+    nam_user[0].strip(),
+    float(nam_user[1].strip()),
+    float(nam_user[2].strip())
+)
+
+deposit_chck = ""
+
+
+while deposit_chck != "balance":
+    try:
+    
+        deposit_chck = input(
+            "Enter your deposit in numbers or type 'balance' for exit:"
+            ).lower()
+        if deposit_chck != "balance":
+            amount = float(deposit_chck)
+            rlt_dep_chck = user_chck.deposit(amount)
+            print(rlt_dep_chck)
+    except (TypeError,ValueError):
+        print("the input is not acceptable to the test")
+print(f"Your balance is {user_chck.balance}")
+
+widraw_amo = ""
+
+
+while widraw_amo != "balance":
+    try:
+        widraw_amo = input(
+            "Enter your withdraw in numbers or type 'balance' for exit and see your balance:"
+        )
+        if widraw_amo.lower() != "balance":
+            amount = float(widraw_amo)
+            rlt_widraw = user_chck.withdraw(amount)
+            print(rlt_widraw)
+    except TypeError:
+        print("the input is not acceptable to the test")
+print(f"Your balance is {user_chck.balance}")

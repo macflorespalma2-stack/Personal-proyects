@@ -1,0 +1,29 @@
+# Manejo de múltiples excepciones en lectura de datos
+
+filename = input("escriba el nombre de su archivo:") + ".txt"
+abc = input("escribe el contenido de su archivo sea numero o texto :")
+with open(filename, "w") as file:
+    file.write(abc)  # Escribimos un valor que causará un error de conversión
+try:
+    # Intentamos abrir y leer un archivo que tal vez no exista
+    
+    with open(filename, "r") as file:
+        content = file.read()
+        number = float(content)
+        result = 100 / number
+
+except FileNotFoundError:
+    print(f"Error: El archivo '{filename}' no existe.")
+
+except ValueError:
+    print("Error: El contenido del archivo no se puede convertir a número.")
+
+except ZeroDivisionError:
+    print("Error: No se puede dividir entre cero.")
+
+except Exception as error:
+    # Captura cualquier otro error imprevisto
+    print(f"Ocurrió un error inesperado: {error}")
+
+else:
+    print(f"Procesamiento exitoso. Resultado: {result}")

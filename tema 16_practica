@@ -1,0 +1,20 @@
+#create a loop that saved names in txt:
+while True:
+    # Prompt the user for a name or command
+    name = input("Enter a names or type'exit' to quit,type 'clear' to clear the file: ")
+    #Conditional statements to handle user input
+    if name.lower()=="exit":
+            break
+    #Check if the user wants to clear the file
+    if name.lower() == "clear":
+        with open("names.txt","w") as file:
+            pass
+        print("File cleared successfully.")
+        continue
+    if name.strip() != "":
+        with open("names.txt", "a") as file:
+            file.write(name + "\n")
+#print the content of the file after the loop ends
+with open("names.txt","r") as file:
+    print("\n----file content----")
+    print(file.read())

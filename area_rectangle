@@ -1,0 +1,15 @@
+#definimos las funciones
+def calculate_area_rectangle(length, width):
+    return length * width
+length = float(input("Enter the length of the rectangle: "))
+width = float(input("Enter the width of the rectangle: "))
+area = calculate_area_rectangle(length, width)
+print("Area of the rectangle:", area)
+def calculate_area_triangle(length, height):
+    return (length * height) / 2
+#decidimos los valores
+length = float(input("Enter the length of the triangle: "))
+height = float(input("Enter the height of the triangle: "))
+#calculamos el area
+area_triangle = calculate_area_triangle(length, height)
+print("Area of the triangle:", area_triangle)

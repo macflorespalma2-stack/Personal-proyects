@@ -1,0 +1,33 @@
+#modulos
+import math
+import datetime
+import random
+import os
+date = datetime.date.today()
+global radius
+radius = None
+while True:
+    try:
+        radius = float(input("Enter float radius of circle:"))
+        break
+    except ValueError:
+        print("Error value not correct type , please type float radius")
+area = round(radius**2 * math.pi,2)
+id_random = random.randint(1,100)
+mnj = None
+while True:
+    mnj = input("enter 'c' to clean(not necessary the firts time) or type any word to read the content:")
+    if mnj == 'c' :
+        with open("record.txt","w")as file:
+            pass
+    else:
+        with open ("record.txt","a") as file:
+            file.write(f"\ndate: {date}")
+            file.write(f"\nradius: {radius}")
+            file.write(f"\narea: {area}")
+            file.write(f"\nid: {id_random}")
+            print(os.path.exists("record.txt"))
+        with open ("record.txt","r") as file:
+            print("\n----file content----")
+            print(file.read())
+        break

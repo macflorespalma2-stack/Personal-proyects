@@ -1,0 +1,48 @@
+import random 
+attempts = 0
+MIN = 1
+
+#Select a difficulty
+while True:
+    select_dificulty = str(input("Select the dificulty level:EASY,MEDIUM,HARD: ")).lower()
+    if select_dificulty == "easy":
+        MAX = 10
+        break
+    elif select_dificulty == "medium":
+        MAX = 100
+        break
+    elif select_dificulty == "hard":
+        MAX = 1000
+        break
+    else:
+        print("Invalid difficulty level. Please choose EASY, MEDIUM, or HARD.")
+            
+#the computer choice a random number 
+num_computer = random.randint(MIN, MAX)
+
+#it was if you choice the number correct
+while True:
+    try:
+        num_user = int(input(f"write a number between {MIN} and {MAX}: "))
+        if MIN <= num_user <= MAX:
+            pass
+        else:
+            print(f"Please enter a number between {MIN} and {MAX}.")
+            continue
+    except ValueError:
+        print("Please enter a valid integer.")
+        continue
+    if num_user > num_computer:
+        print(f"You've gone too far, the number is less than {num_user}, try again")
+        attempts +=1
+        print(f"You have made {attempts} attempts")
+    elif num_user < num_computer:
+        print(f"You've gone too short, the number is greater than {num_user}, try again")
+        attempts +=1
+        print(f"You have made {attempts} attempts")
+    else:
+        break
+#When you complete the minigame, a congratulatory message will appear, and you will be told how many attempts you made.
+print("You guessed it right, congratulations!")
+attempts +=1
+print(f"You completed the game in {attempts} attempts")                 
