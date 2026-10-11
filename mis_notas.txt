@@ -1,3 +1,0 @@
-Línea 1: Mi primera nota guardada.
-Línea 2: Aprendiendo el Tema 16.
-Línea 3: Esta nota se agregó al final.
