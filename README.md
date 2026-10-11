@@ -13,14 +13,14 @@ Este proyecto es simulación donde puedes crear  una cuenta de banco y poder ing
 
 —
 
-### 2.  BankAccount_withdraw_fictional
+### 2.  BankAccount_withdraw (Fictional)
 Este proyecto es la versión mejorada de “BankAccount” con la distinción que en este puedes también retirar dinero y desde el principio ingresar tu dinero y también un limite de crédito.
 **Herramientas utilizadas :“Python”
 * *Estado: “Finalizado”
 
 ---
 
-### 3.  Guess the number_2
+### 3.  Guess the number
 En este proyecto puedes jugar el juego de adivinar el número , e ir aproximándose cada vez más hasta llegar a él .
 **Herramientas utilizadas :“Python”
 * *Estado: “Finalizado”
