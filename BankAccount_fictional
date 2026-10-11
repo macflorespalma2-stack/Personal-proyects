@@ -15,20 +15,23 @@ class BankAccount :
         else:
             return "Invalid deposit amount"
             
-yt=""
-while yt == "":
-        yt = input("enter you user: ")
-        if yt != "":
-            print("Your user is:" +  yt)
-user = BankAccount(yt)
+name=""
+while name == "":
+        name = input("enter you user: ")
+        if name != "":
+            print("Your user is:" +  name)
+user = BankAccount(name)
 
-aaa = ""
-while aaa != "balance":
-    aaa = input(
-        "Enter your deposit(numbers) or type 'balance' for exit:"
-        ).lower()
-    if aaa != "balance":
-        amount = float(aaa)
-        result = user.deposit(amount)
-        print(result)
+nobalance = ""
+while nobalance != "balance":
+    try:
+        nobalance = input(
+            "Enter your deposit(numbers) or type 'balance' for exit:"
+            ).lower()
+        if nobalance != "balance":
+            amount = float(nobalance)
+            result = user.deposit(amount)
+            print(result)
+    except ValueError:
+        print("Invalid input. Please enter a valid deposit amount.")
 print("Your balance is " + str(user.balance))
