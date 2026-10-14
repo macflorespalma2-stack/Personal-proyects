@@ -33,7 +33,7 @@ En este proyecto puedes jugar el juego de adivinar el número , e ir aproximánd
 ### 4. Inventoy Management System
 Este proyecto es una simulación de un sistema de inventario donde se pueda agregar , visualizar , buscar , eliminar cualquier producto del inventario donde demuestro mis habilidades con el manejo de SQ específicamente sqlite3 que está integrado en python.
 
-* *Herramientas utilizadas :“Python and sqlite3”
+* *Herramientas utilizadas :“Python y sqlite3”
 * *Estado: “Finalizado”
 
 
